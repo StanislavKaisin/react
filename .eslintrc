@@ -3,13 +3,13 @@
     "eslint:recommended",
     "plugin:import/errors",
     "plugin:react/recommended",
-    "plugin:jsx-ally/recommended",
+    "plugin:jsx-a11y/recommended",
     "airbnb",
     "prettier",
     "plugin:prettier/recommended",
     "prettier/react"
   ],
-  "plugins": ["react", "import", "prettier", "jsx-ally"],
+  "plugins": ["react", "import", "prettier", "jsx-a11y"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2018,
