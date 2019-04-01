@@ -3,8 +3,6 @@ import React from 'react';
 import orderHistoryData from '../../Data/order-history.json';
 
 const OrderHistory = () => {
-  // console.log('inside OrderHistory');
-  // console.log('orderHistoryData =', orderHistoryData);
   return (
     <table>
       <thead>

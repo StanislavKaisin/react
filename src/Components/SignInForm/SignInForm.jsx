@@ -3,7 +3,6 @@ import SignInBtn from '../SignInBtn/SignInBtn';
 import SignUpBtn from '../SignUpBtn/SignUpBtn';
 
 const SignInForm = ({ onSubmit }) => {
-  // console.log('onSubmit =', onSubmit);
   return (
     <form action="">
       <SignInBtn onSubmit={onSubmit} />

@@ -59,7 +59,6 @@ class App extends Component {
   };
 
   handleFilterChange = event => {
-    // console.log('event.target.value=', event.target.value);
     this.setState({
       filter: event.target.value,
     });
@@ -67,19 +66,14 @@ class App extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // eslint-disable-next-line no-console
-    console.log('this.state befor reset=', this.state);
     this.reset();
-    // console.log('this.state after reset=', this.state);
   };
 
   reset = () => {
-    // console.log('this.state in reset=', this.state);
     this.setState({ currentUser: { ...DEFAULT_USER } });
   };
 
   handleCommentChange = event => {
-    // console.log("event.target.value=", event.target.value);
     this.setState({
       comment: event.target.value,
     });
@@ -87,8 +81,6 @@ class App extends Component {
 
   render() {
     const { currentUser, menuItems, filter, comment, rating } = this.state;
-    // console.log('currentUser =', currentUser);
-    // console.log('this.handleSubmit =', this.handleSubmit);
     const filteredMenu = filteredMenuItems(filter, menuItems);
     return (
       <div className="App">

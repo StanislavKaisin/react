@@ -3,7 +3,6 @@ import RateDishBtn from '../RateDishBtn/RateDishBtn';
 import AddCommentBtn from '../AddCommentBtn/AddCommentBtn';
 
 const MenuItemComment = ({ comment, rating, onChange }) => {
-  // console.log('onSubmit =', onSubmit);
   return (
     <section>
       <div className="CommentsList">

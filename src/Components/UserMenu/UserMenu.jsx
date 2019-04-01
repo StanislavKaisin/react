@@ -3,7 +3,6 @@ import LogOutBtn from '../LogOutBtn/LogOutBtn';
 import Person from '../Person/Person';
 
 const UserMenu = ({ currentUser, userMenuItems }) => {
-  // console.log('currentUser =', currentUser);
   return (
     <div>
       <Person currentUser={currentUser} />
