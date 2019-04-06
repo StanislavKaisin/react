@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
+import MenuPage from './Components/MenuPage';
 import * as serviceWorker from './serviceWorker';
+import './Components/index.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render( < App / > , document.getElementById('root'))
+
+ReactDOM.render( < MenuPage / > , document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
