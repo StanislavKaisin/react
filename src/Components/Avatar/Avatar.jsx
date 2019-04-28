@@ -1,4 +1,5 @@
 import React from 'react';
+import style from './Avatar.module.css';
 
 const Avatar = ({ image = '', width = 60, height = 60 }) => {
   return (
@@ -7,7 +8,7 @@ const Avatar = ({ image = '', width = 60, height = 60 }) => {
       alt="app logo"
       width={width}
       height={height}
-      className="Avatar"
+      className={style.avatar}
     />
   );
 };

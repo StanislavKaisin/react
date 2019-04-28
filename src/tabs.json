@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Tab 1",
+    "title": "Tab 1 Lorem, ipsum.",
+    "text": "Tab 1 Lorem ipsum dolor sit amet consectetur adipisicing."
+  },
+  {
+    "label": "Tab 2",
+    "title": "Tab 2 Lorem, ipsum.",
+    "text": "Tab 2 Lorem ipsum dolor sit amet consectetur adipisicing."
+  },
+  {
+    "label": "Tab 3",
+    "title": "Tab 3 Lorem, ipsum.",
+    "text": "Tab 3 Lorem ipsum dolor sit amet consectetur adipisicing."
+  }
+]

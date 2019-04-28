@@ -5,7 +5,7 @@ const MenuGrid = ({ items, onShowMoreInfo, onDelete }) => {
   return (
     <ul>
       {items.map(item => {
-        console.log('items=', items);
+        // console.log('items=', items);
         return (
           <li key={item.id}>
             <MenuCard

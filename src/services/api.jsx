@@ -16,7 +16,7 @@ const deleteMenuItem = id =>
 
 const addMenuItem = item =>
   axios.post(BASE_URL, item).then(response => {
-    console.log('response=', response);
+    // console.log('response=', response);
     return response.data;
   });
 

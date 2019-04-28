@@ -1,22 +1,23 @@
 import React from 'react';
-import Logo from './Logo';
-import appLogo from '../logo.svg';
-import Navigation from './Navigation';
-import UserMenu from './UserMenu';
-import avatar from '../logo1.svg';
+import Logo from '../Logo/Logo';
+import appLogo from './assets/logo.svg';
+import Navigation from '../Navigation/Navigation';
+import UserMenu from '../UserMenu/UserMenu';
+import avatar from './assets/logo1.svg';
+import styles from './AppHeader.module.css';
 
 const navItems = ['menu', 'about', 'contact', 'delivery'];
 
 const AppHeader = () => {
   return (
-    <header className="Header">
-      <div className="Header__logo">
+    <header className={styles.header}>
+      <div className={styles.logo}>
         <Logo image={appLogo} width={70} height={70} />
       </div>
       <div className="menu">
         <Navigation items={navItems} />
       </div>
-      <div className="Header__usermenu">
+      <div className={styles.usermenu}>
         <UserMenu avatar={avatar} name="Bob Ross" />
       </div>
     </header>
