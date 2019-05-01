@@ -12,6 +12,7 @@ import MenuList from './Components/MenuList/MenuList';
 import SignInForm from './Components/SignInForm/SignInForm';
 import SignUpForm from './Components/SignUpForm/SignUpForm';
 import MenuItemComment from './Components/MenuItemComment/MenuItemComment';
+import MenuItemRating from './Components/MenuItemRating/MenuItemRating';
 
 import './App.css';
 
@@ -54,8 +55,10 @@ class App extends Component {
     },
     menuItems: DEFAULT_MENU,
     filter: '',
-    comment: '',
-    rating: 1,
+    comment: ['Amazing dish!'],
+    currentComment: '',
+    rating: 5,
+    currentRating: 0,
   };
 
   handleFilterChange = event => {
@@ -73,14 +76,41 @@ class App extends Component {
     this.setState({ currentUser: { ...DEFAULT_USER } });
   };
 
-  handleCommentChange = event => {
+  handleChange = event => {
     this.setState({
-      comment: event.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
+  handleAddComment = event => {
+    event.preventDefault();
+    const commentToAdd = event.target[0].value;
+    this.setState(state => ({
+      comment: [...state.comment, commentToAdd],
+      currentComment: '',
+    }));
+    event.target.reset();
+  };
+
+  handleChangeRating = event => {
+    event.preventDefault();
+    const currentRating = +event.target[0].value;
+    this.setState(state => ({
+      rating: (state.rating + currentRating) / 2,
+      currentComment: '',
+    }));
+  };
+
   render() {
-    const { currentUser, menuItems, filter, comment, rating } = this.state;
+    const {
+      currentUser,
+      menuItems,
+      filter,
+      comment,
+      rating,
+      currentRating,
+      currentComment,
+    } = this.state;
     const filteredMenu = filteredMenuItems(filter, menuItems);
     return (
       <div className="App">
@@ -104,9 +134,17 @@ class App extends Component {
           <hr />
           <MenuItemComment
             comment={comment}
+            currentComment={currentComment}
             rating={rating}
             currentUser={currentUser}
-            onChange={this.handleCommentChange}
+            onChange={this.handleChange}
+            onAddComment={this.handleAddComment}
+          />
+          <MenuItemRating
+            rating={rating}
+            currentRating={currentRating}
+            onChange={this.handleChange}
+            onChangeRating={this.handleChangeRating}
           />
         </main>
         <footer />

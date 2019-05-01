@@ -5,6 +5,7 @@ import orderHistoryData from '../../Data/order-history.json';
 const OrderHistory = () => {
   return (
     <table>
+      <caption>History of orders</caption>
       <thead>
         <tr>
           <th>Date</th>

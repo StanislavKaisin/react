@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 
 const MainLogo = () => {
   return (
-    <a href="https://reactjs.org">
-      <img src={logo} className="App-logo" alt="logo" />
+    <a href="/">
+      <img src={logo} className="App-logo" alt="logo" width="75" height="75" />
     </a>
   );
 };

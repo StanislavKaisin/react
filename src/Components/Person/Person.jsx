@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Person = ({ currentUser }) => {
-  // console.log('currentUser =', currentUser);
   const { userAvatar, userName } = currentUser;
   return (
     <div>

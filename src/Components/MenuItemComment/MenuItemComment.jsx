@@ -1,46 +1,31 @@
 import React from 'react';
-import RateDishBtn from '../RateDishBtn/RateDishBtn';
-import AddCommentBtn from '../AddCommentBtn/AddCommentBtn';
+import CommentsList from '../CommentsList/CommentsList';
 
-const MenuItemComment = ({ comment, rating, onChange }) => {
+const MenuItemComment = ({
+  comment,
+  currentComment,
+  onChange,
+  onAddComment,
+}) => {
   return (
     <section>
       <div className="CommentsList">
         <p>Our clients recommend:</p>
-        <ul>
-          <li>Amazing dish!</li>
-        </ul>
+        {/* component that shows comments from state */}
+        <CommentsList commentsList={comment} />
       </div>
-      <form action="">
+      <form action="" onSubmit={onAddComment}>
         <textarea
-          name=""
+          name="currentComment"
           id=""
           cols="34"
           rows="5"
           placeholder="Add your comment"
-          value={comment}
+          value={currentComment}
           onChange={onChange}
         />
         <br />
-        <AddCommentBtn />
-        <br />
-        <select
-          name="rating"
-          value={rating}
-          id=""
-          // onChange={this.handleChange}
-        >
-          <option value="" disabled>
-            ...
-          </option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-        <br />
-        <RateDishBtn />
+        <button type="submit">Add commnet</button>
       </form>
     </section>
   );

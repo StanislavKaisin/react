@@ -1,8 +1,6 @@
 import React from 'react';
 
 const AppNavigation = ({ menuItems }) => {
-  // console.log('menuItems in Navigation =', menuItems);
-  // console.log('typeof menuItems =', typeof menuItems);
   return (
     <nav>
       <ul>

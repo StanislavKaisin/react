@@ -5,6 +5,7 @@ import MenuFilter from '../MenuFilter/MenuFilter';
 const MenuList = ({ menuItems, filter, onFilterChange }) => {
   return (
     <div>
+      <p>Menu list</p>
       <MenuFilter filter={filter} onFilterChange={onFilterChange} />
       {menuItems.map(({ id, name, description, image, price, ingredients }) => {
         return (

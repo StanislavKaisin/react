@@ -5,6 +5,7 @@ import SignUpBtn from '../SignUpBtn/SignUpBtn';
 const SignUpForm = ({ onSubmit }) => {
   return (
     <form action="">
+      <p>Sign Up</p>
       <SignInBtn onSubmit={onSubmit} />
       <SignUpBtn onSubmit={onSubmit} />
       <br />
