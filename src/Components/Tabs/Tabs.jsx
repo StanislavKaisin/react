@@ -3,7 +3,7 @@ import Tab from './Tab';
 
 import styles from './Tabs.module.css';
 
-export class Tabs extends Component {
+export default class Tabs extends Component {
   state = { activeTabIndex: 0 };
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -45,5 +45,3 @@ export class Tabs extends Component {
     );
   }
 }
-
-export default Tabs;
