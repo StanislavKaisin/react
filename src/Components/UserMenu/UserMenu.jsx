@@ -15,7 +15,9 @@ export default class UserMenu extends Component {
   };
 
   componentDidMount = () => {
+    // console.log('componentDidMount');
     window.addEventListener('click', this.handleWindowClick);
+    window.addEventListener('keydown', this.handleWindowKeyPress);
   };
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -25,6 +27,7 @@ export default class UserMenu extends Component {
 
   componentWillUnmount = () => {
     window.removeEventListener('click', this.handleWindowClick);
+    window.removeEventListener('keydown', this.handleWindowKeyPress);
   };
 
   handleWindowClick = event => {
@@ -41,6 +44,15 @@ export default class UserMenu extends Component {
     // this.setState({
     //   isDropDownOpen: false,
     // });
+  };
+
+  handleWindowKeyPress = event => {
+    // console.log('event =', event);
+    const { isDropDownOpen } = this.state;
+    if (event.key === 'Escape' && isDropDownOpen) {
+      // console.log('event.key =', event.key);
+      this.closeDropDown();
+    }
   };
 
   openDropDown = () => {

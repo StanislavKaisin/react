@@ -7,11 +7,43 @@ import './App.css';
 
 export default class App extends Component {
   state = {
-    isMadalOpen: false,
+    isModalOpen: false,
+  };
+
+  componentDidMount = () => {
+    window.addEventListener('keydown', this.handleWindowKeyPress);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener('keydown', this.handleWindowKeyPress);
+  };
+
+  handleModal = () => {
+    // console.log('inside handleModal');
+    const { isModalOpen } = this.state;
+    // console.log('isModalOpen=', isModalOpen);
+    if (!isModalOpen) {
+      this.setState({
+        isModalOpen: true,
+      });
+    } else {
+      this.setState({
+        isModalOpen: false,
+      });
+    }
+  };
+
+  handleWindowKeyPress = event => {
+    // console.log('event =', event);
+    const { isModalOpen } = this.state;
+    if (event.key === 'Escape' && isModalOpen) {
+      // console.log('event.key =', event.key);
+      this.handleModal();
+    }
   };
 
   render() {
-    const { isMadalOpen } = this.state;
+    const { isModalOpen } = this.state;
     const buttonStyles = {
       display: 'inline-flex',
       margin: '0 4px',
@@ -24,15 +56,18 @@ export default class App extends Component {
 
     const style = {
       ...buttonStyles,
-      disabled: true,
+      // disabled: true,
     };
     return (
       <div>
         <AppHeader />
-        <button type="button" onClick={this.openmodal} style={style}>
+        <button type="button" onClick={this.handleModal} style={style}>
           Open Modal
         </button>
-        {isMadalOpen && <Modal onClose={() => null} />}
+        {isModalOpen && (
+          // eslint-disable-next-line react/no-string-refs
+          <Modal onClose={this.handleModal} isModalOpen={isModalOpen} />
+        )}
         <Tabs items={tabsData} />
       </div>
     );
